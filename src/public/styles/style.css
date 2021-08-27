@@ -24,7 +24,8 @@ main{
     max-width: 1200px;
 }
 .pokemon {
-    min-width: 140px;
+    min-width: 150px;
+    max-width: 150px;
     background-color: #eee;
     border-radius: 10px;
     box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
@@ -38,18 +39,6 @@ main{
     font-size: 40px;
 }
 
-
-.btn-logout{
-    margin-top: 20px;
-    color: aliceblue;
-    font-family: sans-serif;
-    background-color: rgb(255, 24, 24);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-
-    cursor: pointer;
-}
 
 
 .nav{
@@ -195,7 +184,7 @@ main{
 	color: #fff !important;
 	text-transform: uppercase;
 	text-decoration: none;
-	background: #31ff87;
+	background: #18ff78;
 	padding: 5px;
 	border-radius: 5px;
 	display: inline-block;
@@ -204,7 +193,7 @@ main{
 }
 
 .btn-buy:hover {
-	background: #434343;
+	background: #0d8d34;
 	letter-spacing: 1px;
 	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
 	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);

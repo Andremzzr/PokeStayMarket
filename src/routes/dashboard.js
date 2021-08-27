@@ -39,7 +39,7 @@ router.get('/', isAuthorized , async (req,res) => {
 
 router.get('/profile', isAuthorized , async (req,res) => {
     try{
-        res.send(200);
+        res.json(req.user);
     }
     catch(err) {
         console.log(err);

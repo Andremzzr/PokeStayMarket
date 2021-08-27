@@ -37,18 +37,7 @@ main{
     margin-top: 20px;
     font-size: 40px;
 }
-.btn-login{
-    margin-top: 20px;
 
-    color: aliceblue;
-    font-family: sans-serif;
-    background-color: rgb(60, 135, 247);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-
-    cursor: pointer;
-}
 
 .btn-logout{
     margin-top: 20px;
@@ -166,3 +155,59 @@ main{
     transform: rotate(45deg) translate(-5px, -7px);
   }
 
+.poke-logo{
+    margin-top: 30px;
+    width: 600px;
+    height: 240px;
+}
+
+
+.btn-login {
+    margin-top: 20px;
+    justify-content: center;
+    width: 300px;
+	border: none;
+	background: #ff3737;
+	color: #ffffff !important;
+	font-weight: 100;
+	padding: 20px;
+	text-transform: uppercase;
+	border-radius: 6px;
+	display: flex;
+	transition: all 0.3s ease 0s;
+    text-decoration: none;
+
+}
+
+.btn-login:hover {
+	color: #404040 !important;
+	font-weight: 700 !important;
+	letter-spacing: 3px;
+	background: none;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.3s ease 0s;
+}
+
+.btn-buy {
+    margin-top: 5px;
+    text-decoration: none;
+	color: #fff !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #31ff87;
+	padding: 5px;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+}
+
+.btn-buy:hover {
+	background: #434343;
+	letter-spacing: 1px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}

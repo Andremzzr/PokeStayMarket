@@ -25,8 +25,5 @@ for (let i = 0; i < pokemons.length; i++) {
     pokeType.includes('/') ? pokeType = pokeType.split('/')[0] : pokeType;
 
     element.style.backgroundColor = colors[pokeType.trim()];
-    console.log(element)
-    console.log(pokeType.trim())
-    console.log(colors[pokeType.toString()])
     
 }

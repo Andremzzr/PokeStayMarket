@@ -38,6 +38,18 @@ main{
     margin-top: 20px;
     font-size: 40px;
 }
+.poke-image{
+  margin-top: 10px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  transition-duration: 0.4s;
+}
+
+.poke-image:hover{
+  box-shadow: 0 3px 15px rgba(10, 10, 10, 0.5);
+}
 
 
 
@@ -189,7 +201,7 @@ main{
 	border-radius: 5px;
 	display: inline-block;
 	border: none;
-	transition: all 0.4s ease 0s;
+	transition: all 0.6s ease 0s;
 }
 
 .btn-buy:hover {
@@ -200,3 +212,4 @@ main{
 	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
 	transition: all 0.4s ease 0s;
 }
+

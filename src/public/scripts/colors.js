@@ -1,8 +1,8 @@
 const colors = {
     fire: '#FDDFDF',
-    grass: '#DEFDE0',
+    grass: '#A3FFC1',
 	electric: '#FCF7DE',
-	water: '#CCF3FA',
+	water: '#A6D5FF',
 	ground: '#f4e7da',
 	rock: '#d5d5d4',
 	fairy: '#fceaff',
@@ -12,7 +12,10 @@ const colors = {
 	psychic: '#eaeda1',
 	flying: '#F5F5F5',
 	fighting: '#E6E0D4',
-	normal: '#F5F5F5'
+	normal: '#F5F5F5',
+	steel: '#DEDEDE',
+	ice: "#C7DEE5",
+	ghost: "#D2C5E6"
 }
 
 const pokemons = document.getElementsByClassName('pokemon');

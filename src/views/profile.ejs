@@ -14,7 +14,7 @@
             <%= user.points %> 
         </div>
     </div>
-    <h2>Player's Pokedex</h2>
+    <div class="title">Player's Pokedex</div>
     <div class="poke-container">
         <% user.pokemons.forEach(pokemon =>{ %>
             <div class="pokemon">
@@ -43,6 +43,19 @@
             </div>
             
           <% }); %>
+    </div>
+
+    <div class="title">
+        Cards
+    </div>
+    <div class="card-container">
+        <% user.cards.forEach(card =>{ %>
+
+            <div class="card">
+                <img src="<%= card.image  %> " alt="">
+            </div>
+        
+        <% }); %>   
     </div>
 </main>
 

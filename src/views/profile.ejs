@@ -1,7 +1,59 @@
 <%- include('partials/header') -%>
 <%- include('partials/navbar') -%>
 
+<main>
+    <div class="profile">
+        <div class="profile-image">
+            <img src="https://cdn.discordapp.com/avatars/<%= user.playerId %>/<%= user.icon %>.webp" alt="" class="profile-image">
+        </div>
+        <div class="profile-tag">
+            <%= user.tag %> 
+        </div>
+        <i class="fas fa-coins coin"></i>
+        <div class="user-points">
+            <%= user.points %> 
+        </div>
+    </div>
+    <h2>Player's Pokedex</h2>
+    <div class="poke-container">
+        <% user.pokemons.forEach(pokemon =>{ %>
+            <div class="pokemon">
+                
+                <div>
+                    <%- pokemon.name %> 
+                </div>
+                    
+                <a href="https://www.pokemon.com/br/pokedex/<%=pokemon.name.includes('-') ? pokemon.name.split('-')[0]: pokemon.name %>">
+                    <div class="poke-image">
+    
+                        <img src="<%=pokemon.image %>" alt="">
+                    </div>
+                </a>
+                <br>
+                <div>
+                    Shine:<%- pokemon.shiny %>
+                </div>
+                <div class="poke-type">
+                  <%- pokemon.type %>
+                </div>
+                
+                
+    
+    
+            </div>
+            
+          <% }); %>
+    </div>
+</main>
 
 
+
+
+
+
+
+
+
+<script src="/scripts/colors.js"></script>
 <script src="/scripts/nav.js"></script>
 <%- include('partials/footer') -%>

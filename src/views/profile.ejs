@@ -36,10 +36,14 @@
                 <div class="poke-type">
                   <%- pokemon.type %>
                 </div>
+
+                <div class="points">
+                    <input  placeholder="points...">
+                </div>
                 
-                
-    
-    
+                <div class="button-cont" >
+                    <a class="btn-buy" href="/dashboard/sell/<%= pokemon.name %>">Sell</a>
+                </div>     
             </div>
             
           <% }); %>
@@ -58,7 +62,6 @@
         <% }); %>   
     </div>
 </main>
-
 
 
 

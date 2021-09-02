@@ -184,6 +184,9 @@ main{
     text-decoration: none;
 
 }
+.button-cont{
+  margin-bottom: 5px;
+}
 
 .btn-login:hover {
 	color: #404040 !important;
@@ -222,6 +225,9 @@ main{
   margin-bottom: 5px;
 }
 
+.points{
+  display: none;
+}
 .profile{
   flex-direction: column;
   align-items: center;
@@ -242,4 +248,72 @@ main{
   border-radius: 50%;
   margin-bottom: 5px;
 }
+.btn-container{
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
+.btn-sell {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  border-radius: 0.6em;
+  color: #e74c3c;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+
+.btn-sell {
+  border-color: #23ff6c;
+  border-radius: 0;
+  color: #23ff6c;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
+}
+.btn-sell:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+  background: #23ff6c;
+  z-index: -1;
+  -webkit-transition: width 150ms ease-in-out;
+  transition: width 150ms ease-in-out;
+}
+.btn-sell:hover {
+  color: #fff;
+}
+.btn-sell:hover:after {
+  width: 110%;
+}

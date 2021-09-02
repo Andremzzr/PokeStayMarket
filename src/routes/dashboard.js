@@ -1,7 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const Pokemon = require("../models/Pokemon");
-const Player = require('../models/Player');
+
+const {
+    buyPokemon,
+    sellPokemon
+} = require('../controllers/PokemonController');
 
 function isAuthorized(req,res,next) {
     if(req.user){        
@@ -47,61 +51,16 @@ router.get('/profile/', isAuthorized , async (req,res) => {
     
 });
 
-router.get('/buy/:pokemonId', isAuthorized, async(req,res) =>{
-    
-        const {pokemonId}= req.params;
-        const {user} = req; 
-        
-        Pokemon.findOne({pokemonId:pokemonId})
-        .then(
-            pokemon => {
-                Player.findOne({playerId : user.playerId})
-                .then( buyer => {
+router.get('/buy/:pokemonId', isAuthorized, buyPokemon);
 
-                    if(pokemon.playerId === buyer.playerId){
-                        console.log("Should be stoped");
-                        res.redirect('/dashboard');
-                    }
-                    else if(pokemon.price > buyer.points){
-                        console.log("You don't have enough points");
-                        res.redirect('/dashboard');
-                    }
-                    else{
-                        let pokemonArray = buyer.pokemons;
-                        pokemonArray.push({
-                            name: pokemon.pokemonName,
-                            type: pokemon.type,
-                            image: pokemon.image,
-                            shiny : pokemon.shiny,
-                            selling: false
-                        });
-
-                        const buyerPoints = buyer.points;
-
-                        Player.updateOne({playerId: req.user.playerId},{
-                            pokemons : pokemonArray,
-                            points : buyerPoints - pokemon.pokemonPrice
-                        }, err => console.log(`You bought the ${pokemon.pokemonName} ${pokemon.pokemonId}`));
-
-                        Player.findOne({playerId: pokemon.playerId})
-                            .then(
-                                owner =>{
-                                    const ownerPoints = owner.points;
-                                    Player.updateOne({playerId: pokemon.playerId},{
-                                        points: ownerPoints + pokemon.pokemonPrice
-                                    },err => console.log(`Player ${pokemon.playerId} receive ${ pokemon.pokemonPrice} pts!`) );   
-
-                                    Pokemon.deleteOne({pokemonId : pokemonId},err => console.log("Pokemon sold"));
-
-                                    res.redirect('/dashboard/profile');
-                                }
-                            )
-                        }
-                    
-                })
-            }
-        )
-
-    
+router.get('/sell/:pokemonName', isAuthorized, async(req,res) => {
+    try{
+        res.render('pokemon',{user : req.user, pokemonName :req.params.pokemonName });
+    }
+    catch(err) {
+        console.log(err);
+    }
 });
+
+
 module.exports = router;

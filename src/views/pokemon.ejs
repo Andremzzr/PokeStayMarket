@@ -1,27 +1,27 @@
 <%- include('partials/header') -%>
 <%- include('partials/navbar') -%>
 
-
-
 <main>
-    <div class="title">
-        Market
-    </div>
+
     <div class="poke-container">
-        <% pokemons.forEach(pokemon =>{ %>
+        <% user.pokemons.forEach(pokemon => { %>
+            
+           <% if (pokemon.name == pokemonName) {%>
             <div class="pokemon">
-                
+                    
                 <div>
-                    <%- pokemon.pokemonName %> 
+                    <%- pokemon.name %> 
                 </div>
                     
                 <a href="https://www.pokemon.com/br/pokedex/<%=pokemon.pokemonName %>">
                     <div class="poke-image">
-
+    
                         <img src="<%=pokemon.image %>" alt="">
                     </div>
                 </a>
-                <br>
+                <div>
+                    <h3>Owner: <%-user.tag%></h3>
+                </div>
                 <h4><%- pokemon.pokemonId %></h4>
                 <div class="poke-type">
                   <%- pokemon.type %>
@@ -29,18 +29,24 @@
                 <div class="poke-price">
                   Price: <%- pokemon.pokemonPrice %> points
                 </div>
+        
+           <% } %>
+           
+        
+        <% }); %>
+        <div class="btn-container">
+            <a href="/dashboard" style="text-decoration: none;"><button class="btn-sell">Sell</button></a>
+        </div>
                 
-
-                <div class="button-cont" ><a class="btn-buy" href="/dashboard/buy/<%=pokemon.pokemonId%>" >Buy</a></div>
-
-            </div>
-            
-          <% }); %>
+        
+        
+    
     </div>
-   
+    
+    
 </main>
- 
+
+
 
 <script src="/scripts/colors.js"></script>
 <%- include('partials/footer') -%>
-

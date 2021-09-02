@@ -1,0 +1,77 @@
+<%- include('partials/header') -%>
+<%- include('partials/navbar') -%>
+
+<main>
+    <div class="profile">
+        <div class="profile-image">
+            <img src="https://cdn.discordapp.com/avatars/<%= user.playerId %>/<%= user.icon %>.webp" alt="" class="profile-image">
+        </div>
+        <div class="profile-tag">
+            <%= user.tag %> 
+        </div>
+        <i class="fas fa-coins coin"></i>
+        <div class="user-points">
+            <%= user.points %> 
+        </div>
+    </div>
+    <div class="title">Player's Pokedex</div>
+    <div class="poke-container">
+        <% if (user.pokemons.length == 0) { %>
+            <div class="message">This user doesn't have any pokemons :(</div>
+           <% } %>
+        <% user.pokemons.forEach(pokemon =>{ %>
+            <div class="pokemon">
+                
+                <div>
+                    <%- pokemon.name %> 
+                </div>
+                    
+                <a href="https://www.pokemon.com/br/pokedex/<%=pokemon.name.includes('-') ? pokemon.name.split('-')[0]: pokemon.name %>">
+                    <div class="poke-image">
+    
+                        <img src="<%=pokemon.image %>" alt="">
+                    </div>
+                </a>
+                <br>
+                <div>
+                    Shine:<%- pokemon.shiny %>
+                </div>
+                <div class="poke-type">
+                  <%- pokemon.type %>
+                </div>
+                <h4><%= pokemon.pokemonId%></h4>
+                <div class="points">
+                    <input  placeholder="points...">
+                </div>    
+            </div>
+            
+          <% }); %>
+    </div>
+
+    <div class="title">
+        Cards
+    </div>
+    <div class="card-container">
+        <% if (user.cards.length == 0) { %>
+             <div class="message">This user doesn't have any poke cards :(</div>
+            <% } %>
+        <% user.cards.forEach(card =>{ %>
+            
+            <div class="card">
+                <img src="<%= card.image  %> " alt="">
+            </div>
+        
+        <% }); %>   
+    </div>
+</main>
+
+
+
+
+
+
+
+
+<script src="/scripts/colors.js"></script>
+
+<%- include('partials/footer') -%>

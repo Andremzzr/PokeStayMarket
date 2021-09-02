@@ -6,6 +6,11 @@ const passport = require("passport");
 const discordStrategy = require('./strategies/discordstrategy');
 const db  = require('./database/database');
 const path = require('path');
+const bodyParser = require('body-parser');
+
+
+const urlencodeParser = bodyParser.urlencoded({extended: false});
+
 
 db.then(
     () => console.log("Conected to MongoDB")

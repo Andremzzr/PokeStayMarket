@@ -323,3 +323,30 @@ main{
   margin: 10px;
   font-size: 30px;
 }
+
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pts-input{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-top: 10px;
+  border: none;
+  height: 30px;
+  font-size: medium;
+
+  width: 80%;
+
+  border-radius: 5px;
+  transition-duration: 0.6s;
+}
+
+.pts-input:hover{
+  background-color: #f7f7a9;
+  
+}
+
+.pts-input:focus{
+  outline: none;
+}

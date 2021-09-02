@@ -7,6 +7,10 @@ const {
     sellPokemon
 } = require('../controllers/PokemonController');
 
+const {
+    seeProfilePage
+} = require('../controllers/ProfileController');
+
 function isAuthorized(req,res,next) {
     if(req.user){        
         next();
@@ -42,7 +46,7 @@ router.get('/', isAuthorized , async (req,res) => {
 });
 
 router.get('/profile/', isAuthorized , async (req,res) => {
-    try{
+    try{       
         res.render('profile',{user : req.user});
     }
     catch(err) {
@@ -51,16 +55,21 @@ router.get('/profile/', isAuthorized , async (req,res) => {
     
 });
 
+router.get('/:profileId/page', isAuthorized, seeProfilePage);
+
 router.get('/buy/:pokemonId', isAuthorized, buyPokemon);
 
-router.get('/sell/:pokemonName', isAuthorized, async(req,res) => {
+router.get('/sell/:pokemonId', isAuthorized, async(req,res) => {
     try{
-        res.render('pokemon',{user : req.user, pokemonName :req.params.pokemonName });
+        res.render('pokemon',{user : req.user, pokemonName :req.params.pokemonId });
     }
     catch(err) {
         console.log(err);
     }
 });
+
+router.post('/sell/:pokemonId')
+
 
 
 module.exports = router;

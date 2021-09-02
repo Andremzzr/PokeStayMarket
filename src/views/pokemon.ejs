@@ -26,17 +26,19 @@
                 <div class="poke-type">
                   <%- pokemon.type %>
                 </div>
-                <div class="poke-price">
-                  Price: <%- pokemon.pokemonPrice %> points
-                </div>
+                
         
            <% } %>
            
         
         <% }); %>
-        <div class="btn-container">
-            <a href="/dashboard" style="text-decoration: none;"><button class="btn-sell">Sell</button></a>
-        </div>
+        <form action="POST">
+            <input placeholder="points..." class="pts-input">
+            <div class="btn-container">
+                <a href="/dashboard" style="text-decoration: none;"><button class="btn-sell">Sell</button></a>
+            </div>
+        </form>
+        
                 
         
         

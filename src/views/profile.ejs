@@ -16,6 +16,9 @@
     </div>
     <div class="title">Player's Pokedex</div>
     <div class="poke-container">
+        <% if (user.pokemons.length == 0) { %>
+            <div class="message">This user doesn't have any pokemons :(</div>
+           <% } %>
         <% user.pokemons.forEach(pokemon =>{ %>
             <div class="pokemon">
                 
@@ -36,7 +39,7 @@
                 <div class="poke-type">
                   <%- pokemon.type %>
                 </div>
-
+                <h4><%= pokemon.pokemonId%></h4>
                 <div class="points">
                     <input  placeholder="points...">
                 </div>
@@ -53,8 +56,11 @@
         Cards
     </div>
     <div class="card-container">
+        <% if (user.cards.length == 0) { %>
+             <div class="message">This user doesn't have any poke cards :(</div>
+            <% } %>
         <% user.cards.forEach(card =>{ %>
-
+            
             <div class="card">
                 <img src="<%= card.image  %> " alt="">
             </div>

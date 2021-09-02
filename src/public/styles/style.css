@@ -317,3 +317,9 @@ main{
 .btn-sell:hover:after {
   width: 110%;
 }
+
+.message{
+  color: #777777;
+  margin: 10px;
+  font-size: 30px;
+}

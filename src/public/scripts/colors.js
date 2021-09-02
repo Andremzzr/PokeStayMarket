@@ -54,6 +54,7 @@ function trimTypes(array) {
 }
 
 function createImageArray(array,element){
+	
 	for (let index = 0; index < array.length; index++) {
 		const type = array[index];
 		let img = document.createElement('img');
@@ -68,6 +69,7 @@ function createImageArray(array,element){
 }
 
 function createImageSolo(pokeType,element){
+	
 	let img = document.createElement('img');
 	img.src = typeIcons[pokeType];
 	img.title = `Pokemon Type: ${pokeType}`;

@@ -61,7 +61,7 @@ router.get('/buy/:pokemonId', isAuthorized, buyPokemon);
 
 router.get('/sell/:pokemonId', isAuthorized, async(req,res) => {
     try{
-        res.render('pokemon',{user : req.user, pokemonName :req.params.pokemonId });
+        res.render('pokemon',{user : req.user, pokemonId :req.params.pokemonId });
     }
     catch(err) {
         console.log(err);

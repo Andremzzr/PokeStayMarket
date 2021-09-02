@@ -6,14 +6,14 @@
     <div class="poke-container">
         <% user.pokemons.forEach(pokemon => { %>
             
-           <% if (pokemon.name == pokemonName) {%>
+           <% if (pokemon.pokemonId == pokemonId) {%>
             <div class="pokemon">
                     
                 <div>
                     <%- pokemon.name %> 
                 </div>
                     
-                <a href="https://www.pokemon.com/br/pokedex/<%=pokemon.pokemonName %>">
+                <a href="https://www.pokemon.com/br/pokedex/<%=pokemon.name %>">
                     <div class="poke-image">
     
                         <img src="<%=pokemon.image %>" alt="">

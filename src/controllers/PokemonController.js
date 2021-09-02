@@ -25,6 +25,7 @@ module.exports = {
                             type: pokemon.type,
                             image: pokemon.image,
                             shiny : pokemon.shiny,
+                            pokemonId: pokemon.pokemonId,
                             selling: false
                         });
 

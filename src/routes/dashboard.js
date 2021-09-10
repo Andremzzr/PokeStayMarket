@@ -4,7 +4,7 @@ const Pokemon = require("../models/Pokemon");
 
 const {
     buyPokemon,
-    sellPokemon
+    sellPokemon,
 } = require('../controllers/PokemonController');
 
 const {
@@ -68,7 +68,7 @@ router.get('/sell/:pokemonId', isAuthorized, async(req,res) => {
     }
 });
 
-router.post('/sell/:pokemonId')
+router.post('/sell/:pokemonId', isAuthorized, sellPokemon);
 
 
 

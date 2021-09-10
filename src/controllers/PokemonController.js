@@ -59,6 +59,65 @@ module.exports = {
 
     sellPokemon: async (req,res) => {
         const {pokemonId}= req.params;
-        const {user} = req; 
+        const {user} = req;
+        const {points} = req.body;
+        
+        Player.findOne({playerId: user.playerId})
+        .then( player => {
+            if(player == undefined){
+                res.redirect('/dashboard');
+            }
+            else{
+
+                let insertedIdPokemon;
+
+                user.pokemons.forEach(pokemon =>{
+                    if(pokemon.pokemonId == pokemonId){
+                        insertedIdPokemon = pokemonId;
+                        pokemon.selling = true;
+                    }
+                });
+
+                if(insertedIdPokemon == undefined){
+                    res.redirect('/dashboard');
+                    return;
+                }
+
+                else{
+                    let sellingPokemon=  user.pokemons.filter(pokemon => {
+                        return pokemon.selling == true;
+                     })
+     
+                    let newPokemons = user.pokemons.filter(pokemon => {
+                         return pokemon.selling == false;
+                    })
+
+                    const pokemonObj = user.pokemons.filter(pokemon=> pokemon.pokemonId == insertedIdPokemon);
+               
+
+                    const newPokemon = new Pokemon({
+                        playerId : user.playerId,
+                        pokemonPrice: parseInt(points),
+                        pokemonId : pokemonObj[0].pokemonId,
+                        pokemonName: sellingPokemon[0].name,
+                        image : sellingPokemon[0].image,
+                        type:  sellingPokemon[0].type,
+                        shiny : sellingPokemon[0].shiny
+                    });
+
+                    newPokemon.save()
+                    .then(pokemon => console.log(`Pokemon saved: ${pokemon.pokemonId}`))
+                    .catch(err => console.log(`Error: ${err}`));
+
+                    Player.updateOne({playerId : user.playerId}, {
+                        pokemons : newPokemons
+                     }, (err)=>{ res.redirect('/dashboard/profile')})
+
+                }
+
+
+            }
+
+        })
     }
 }

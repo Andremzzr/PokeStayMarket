@@ -30,19 +30,20 @@
         
            <% } %>
            
-        
-        <% }); %>
-        
-        <div class="form-container">
-            <form action="POST">
-                <input placeholder="points..." class="pts-input">
+           <div class="form-container">
+            <form method="POST" action="/dashboard/sell/<%= pokemon.pokemonId %> ">
+                <input placeholder="points..." class="pts-input" required minlength="1" name="points">
                 <div class="btn-container">
-                    <a href="/dashboard" style="text-decoration: none;"><button class="btn-sell">Sell</button></a>
+                    <a href="/dashboard" style="text-decoration: none;"><button class="btn-sell" type="
+                        submit">Sell</button></a>
                 </div>
             </form>
         </div>
         
+
+        <% }); %>
         
+                
                 
         
         

@@ -347,6 +347,52 @@ main{
   
 }
 
-.pts-input:focus{
+.pts-input:focus, .player-input:focus{
   outline: none;
 }
+
+.player-search-container{
+  display: block;
+
+}
+.player-input{
+  margin: 2px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-top: 10px;
+  border: none;
+  height: 30px;
+  font-size: medium;
+
+  width: 80%;
+
+  border-radius: 5px;
+}
+
+.search-player-btn{
+
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 5px;
+
+  height: 100%;
+  transition-duration: 0.6s;
+}
+
+.search-player-btn:hover{
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.not-found-message{
+  font-size: 50px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgb(121, 121, 121);
+
+  margin-top: 200px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+

@@ -6,9 +6,23 @@
         <div class="line2"></div>
         <div class="line3"></div>
       </div>
+
+      <div class="player-search-container">
+
+        <form action="/dashboard/players" method="POST">
+          <input type="text" placeholder="player's tag..." class="player-input" name="player">
+          <button type="submit" class="search-player-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+
+
+      </div>
+
       <ul class="nav-list">
         <li><a href="/dashboard/profile/" class="nav profile-nav">Profile</a></li>
         <li><a href="/dashboard/logout" class="nav">Logout</a></li>
       </ul>
+
     </nav>
   </header>

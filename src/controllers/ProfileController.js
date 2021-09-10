@@ -19,5 +19,21 @@ module.exports = {
                 }
             }
         )
+    },
+
+    seePlayers: async (req,res) => {
+        const {player} = req.body;
+
+        Player.findOne({tag: player})
+        .then(
+            players => {
+                if(players == undefined){
+                    res.redirect('/dashboard/playerNotFound/');
+                }
+                else{
+                    res.redirect(`/dashboard/${players.playerId}/page`);
+                }
+            }
+        )
     }
 }

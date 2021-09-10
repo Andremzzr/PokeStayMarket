@@ -8,7 +8,8 @@ const {
 } = require('../controllers/PokemonController');
 
 const {
-    seeProfilePage
+    seeProfilePage,
+    seePlayers
 } = require('../controllers/ProfileController');
 
 function isAuthorized(req,res,next) {
@@ -69,7 +70,11 @@ router.get('/sell/:pokemonId', isAuthorized, async(req,res) => {
 });
 
 router.post('/sell/:pokemonId', isAuthorized, sellPokemon);
+router.post('/players', isAuthorized, seePlayers);
 
+router.get('/playerNotFound', isAuthorized, async(req,res)=>{
+    res.render('notfound');
+})
 
 
 module.exports = router;

@@ -20,11 +20,13 @@
                     
                     <img src="https://cdn.discordapp.com/avatars/<%= user.playerId %>/<%= user.icon %>.webp" alt="player pic" class="profile-image leaderboard-pic">
                     <div class="info">
+                        
                         <div class="player-tag"><%= user.tag %> </div>
+                        <div class="line"></div>
                         <div>💰: <%= user.points %> </div>
                         <div>Pokemons: <%= user.pokemons.length %> </div>
                         <div>Cards: <%= user.cards.length %> </div>
-                        
+
                     </div>
                     
                 </div>
@@ -33,4 +35,6 @@
     
     </div>
 </main>
+
+
 <%- include('partials/header') -%>

@@ -10,18 +10,20 @@
                 <div class="player">
                     <% if (i == 0) { %>
                         🥇
-                    <% } %>
-                    <% if (i == 1) { %>
+                    <% } else if (i == 1) { %>
                         🥈
-                    <% } %>
-                    <% if (i == 2) { %>
+                    <% } else if (i == 2) { %>
                         🥉
-                    <% } %>
+                    <% } else { %>
+                        <%= i + 1 %>
+                    <% }%>
                     
                     <img src="https://cdn.discordapp.com/avatars/<%= user.playerId %>/<%= user.icon %>.webp" alt="player pic" class="profile-image leaderboard-pic">
                     <div class="info">
                         <div class="player-tag"><%= user.tag %> </div>
                         <div>💰: <%= user.points %> </div>
+                        <div>Pokemons: <%= user.pokemons.length %> </div>
+                        <div>Cards: <%= user.cards.length %> </div>
                         
                     </div>
                     

@@ -13,9 +13,11 @@ module.exports = {
                 .then( buyer => {
 
                     if(pokemon.playerId === buyer.playerId){
+                        req.flash('message', "This pokemon is yours");
                         res.redirect('/dashboard');
                     }
                     else if(pokemon.price > buyer.points){
+                        req.flash('message', "You don't have enough points to buy this pokemon");
                         res.redirect('/dashboard');
                     }
                     else{
@@ -62,6 +64,7 @@ module.exports = {
         const {user} = req;
         const {points} = req.body;
         if(parseInt(points) < 0) {
+            req.flash('message', 'You cannot sell your pokemon for a negative price');
             res.redirect(`/dashboard/sell/${pokemonId}`);
             return;
         }

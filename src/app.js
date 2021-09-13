@@ -7,6 +7,7 @@ const discordStrategy = require('./strategies/discordstrategy');
 const db  = require('./database/database');
 const path = require('path');
 const bodyParser = require('body-parser');
+const flash = require('connect-flash');
 
 
 const urlencodeParser = bodyParser.urlencoded({extended: false});
@@ -29,6 +30,8 @@ app.use(session({
     saveUninitialized : false,
     name: 'discord.oauth2'
 }));
+
+app.use(flash());
 
 //SET VIEWS
 app.set('view engine', 'ejs');

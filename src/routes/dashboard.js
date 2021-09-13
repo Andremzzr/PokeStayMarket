@@ -37,7 +37,8 @@ router.get('/', isAuthorized , async (req,res) => {
     try{
         const pokemons = await Pokemon.find({});
         res.render('dashboard', {
-             pokemons
+             pokemons,
+             message : req.flash('message')
         });
     }
     catch(err) {
@@ -64,7 +65,7 @@ router.get("/leaderboard", isAuthorized, seeLeaderboard);
 
 router.get('/sell/:pokemonId', isAuthorized, async(req,res) => {
     try{
-        res.render('pokemon',{user : req.user, pokemonId :req.params.pokemonId });
+        res.render('pokemon',{user : req.user, pokemonId :req.params.pokemonId, message: req.flash('message') });
     }
     catch(err) {
         console.log(err);

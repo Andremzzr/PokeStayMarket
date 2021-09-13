@@ -2,7 +2,8 @@ const Player = require('../models/Player');
 
 module.exports = {
     seeProfilePage : async(req,res) => {
-        Player.findOne({playerId : req.params.profileId})
+        const {profileId} = req.params;
+        Player.findOne({playerId : profileId})
         .then(
             player => {
                 if(player == undefined){
@@ -13,7 +14,7 @@ module.exports = {
                         res.redirect('/dashboard/profile');
                     }
                     else{
-                        res.render('profilePage', {user: player})
+                        res.render('profilePage', {user: player});
 
                     }
                 }

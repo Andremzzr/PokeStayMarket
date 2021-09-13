@@ -2,7 +2,12 @@
 <%- include('partials/navbar') -%>
 
 <main>
-
+    <% if(message.length > 0) { %>
+        <div class="message-alert" id="message-alert">
+            <%= message %> 
+        <button id="btn-close">x</button>    
+        </div>
+        <% } %>
     <div class="poke-container">
         <% user.pokemons.forEach(pokemon => { %>
             
@@ -56,5 +61,6 @@
 
 
 
+<script src="/scripts/close.js"></script>
 <script src="/scripts/colors.js"></script>
 <%- include('partials/footer') -%>

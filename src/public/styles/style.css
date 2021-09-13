@@ -7,6 +7,7 @@ body{
     padding: 0;
 }
 main{
+    
     font-family: 'Lato', sans-serif;
     display: flex;
     flex-direction: column;
@@ -83,8 +84,19 @@ main{
     height: 8vh;
   }
   
- 
-  
+ .creator-container{
+   margin-top: 300px;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+
+ .creator-container a {
+   text-decoration: none;
+   color: #ff3737;
+   transition: 0.2s;
+ } 
+ .creator-container a:hover {
+  color: #000000;
+} 
   .nav-list {
     list-style: none;
     display: flex;
@@ -162,6 +174,8 @@ main{
   }
 
 .poke-logo{
+  
+  margin-bottom: 40px ;
     margin-top: 30px;
     width: 600px;
     height: 240px;
@@ -262,9 +276,8 @@ main{
      -moz-appearance: none;
           appearance: none;
   background-color: transparent;
-  border: 2px solid #e74c3c;
-  border-radius: 0.6em;
-  color: #e74c3c;
+  border: 2px solid #23ff6c;
+ 
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -283,12 +296,7 @@ main{
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-}
 
-
-.btn-sell {
-  border-color: #23ff6c;
-  border-radius: 0;
   color: #23ff6c;
   position: relative;
   overflow: hidden;
@@ -296,6 +304,7 @@ main{
   -webkit-transition: color 150ms ease-in-out;
   transition: color 150ms ease-in-out;
 }
+
 .btn-sell:after {
   content: '';
   position: absolute;

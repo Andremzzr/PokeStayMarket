@@ -61,7 +61,10 @@ module.exports = {
         const {pokemonId}= req.params;
         const {user} = req;
         const {points} = req.body;
-        
+        if(parseInt(points) < 0) {
+            res.redirect(`/dashboard/sell/${pokemonId}`);
+            return;
+        }
         Player.findOne({playerId: user.playerId})
         .then( player => {
             if(player == undefined){

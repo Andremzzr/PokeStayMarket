@@ -47,6 +47,10 @@ app.use('/dashboard',dashboardRoute);
 app.get('/', (req,res) => {
     res.render('home');
 })
+app.get('/forbiden', (req,res) => {
+    res.render('forbiden');
+})
+
 app.use((req,res,next) => {
     res.status(404).render('404');
 })

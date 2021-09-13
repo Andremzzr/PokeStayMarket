@@ -35,5 +35,13 @@ module.exports = {
                 }
             }
         )
+    },
+
+    seeLeaderboard: async(req,res) => {
+        const players = await Player.find({points:{$gt:0}});
+
+        const playersLeaderboard = players.sort((a,b) => b.points - a.points);
+
+        if(players)res.render('leader', {playersLeaderboard});
     }
 }

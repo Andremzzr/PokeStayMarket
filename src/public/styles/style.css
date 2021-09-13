@@ -68,7 +68,52 @@ main{
   .nav:hover {
     opacity: 0.7;
   }
+ 
+.leaderboard{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.leaderboard .player {
+  width: 100%;
+  color: #000000;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 3px 15px rgba(10, 10, 10, 0.5);
+  margin-bottom: 10px;
+
+  border-radius: 5px;
+
+  transition: 0.6s;
+}
+.leaderboard .player:hover {
+  box-shadow: 0 3px 15px rgb(0, 0, 0);
+}
+
+ a {
+  text-decoration: none;
+}
+.leaderboard .info{
   
+  display: flex;
+  flex-direction: column;
+}
+.leaderboard .profile-image{
+  width: 70px;
+  height: 70px;
+  margin-right:10px;
+  margin-left:10px;
+}
+
+.title-lead {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
   .logo {
     font-size: 24px;
     text-transform: uppercase;

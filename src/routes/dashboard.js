@@ -9,7 +9,8 @@ const {
 
 const {
     seeProfilePage,
-    seePlayers
+    seePlayers,
+    seeLeaderboard
 } = require('../controllers/ProfileController');
 
 function isAuthorized(req,res,next) {
@@ -59,6 +60,7 @@ router.get('/profile/', isAuthorized , async (req,res) => {
 router.get('/:profileId/page', isAuthorized, seeProfilePage);
 
 router.get('/buy/:pokemonId', isAuthorized, buyPokemon);
+router.get("/leaderboard", isAuthorized, seeLeaderboard);
 
 router.get('/sell/:pokemonId', isAuthorized, async(req,res) => {
     try{
@@ -69,8 +71,10 @@ router.get('/sell/:pokemonId', isAuthorized, async(req,res) => {
     }
 });
 
+
 router.post('/sell/:pokemonId', isAuthorized, sellPokemon);
 router.post('/players', isAuthorized, seePlayers);
+
 
 router.get('/playerNotFound', isAuthorized, async(req,res)=>{
     res.render('notfound');

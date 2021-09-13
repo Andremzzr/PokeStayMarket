@@ -1,0 +1,34 @@
+<%- include('partials/header') -%>
+<%- include('partials/navbar') -%>
+<main>
+    <div class="title-lead ">Leaderboard</div>
+    <div class="leaderboard">
+        
+        <% for( let i = 0; i < playersLeaderboard.length; i++ ) { %>
+            <% const user = playersLeaderboard[i] %>
+            <a href="/dashboard/<%= user.playerId %>/page">
+                <div class="player">
+                    <% if (i == 0) { %>
+                        🥇
+                    <% } %>
+                    <% if (i == 1) { %>
+                        🥈
+                    <% } %>
+                    <% if (i == 2) { %>
+                        🥉
+                    <% } %>
+                    
+                    <img src="https://cdn.discordapp.com/avatars/<%= user.playerId %>/<%= user.icon %>.webp" alt="player pic" class="profile-image leaderboard-pic">
+                    <div class="info">
+                        <div class="player-tag"><%= user.tag %> </div>
+                        <div>💰: <%= user.points %> </div>
+                        
+                    </div>
+                    
+                </div>
+               </a>
+        <% } %>
+    
+    </div>
+</main>
+<%- include('partials/header') -%>

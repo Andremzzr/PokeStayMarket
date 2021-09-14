@@ -9,11 +9,50 @@
         <div class="profile-tag">
             <%= user.tag %> 
         </div>
+        <div class="profile-type"></div>
+
         <i class="fas fa-coins coin"></i>
         <div class="user-points">
             <%= user.points %> 
         </div>
     </div>
+
+   
+    <div class="timeline-box">
+        <div class="timeline">
+            <% user.activities.reverse().forEach(activ => { %>
+                <div class="timeline-container right">
+                    <div class="content">
+                      <img src="<%= activ.image %> " alt="" style="width: 40px;height: 40px;">
+                      <div class="timeline-content-desc">
+                        <%= activ.message %>
+                      </div>
+                    </div>
+                  </div>
+            <% }) %>
+            
+          </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="title">Player's Pokedex</div>
     <div class="poke-container">
         <% if (user.pokemons.length == 0) { %>
@@ -75,7 +114,7 @@
 
 
 
-
+<script src="/scripts/type.js"></script>
 <script src="/scripts/colors.js"></script>
 <script src="/scripts/nav.js"></script>
 <%- include('partials/footer') -%>

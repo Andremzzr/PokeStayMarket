@@ -1,5 +1,7 @@
 const Pokemon = require("../models/Pokemon");
 const Player = require('../models/Player');
+const handleActivitie = require('../activities/handleActivities');
+
 
 module.exports = {
     buyPokemon: async (req,res) =>{
@@ -61,7 +63,6 @@ module.exports = {
 
 
     sellPokemon: async (req,res) => {
-        const handleActivitie = require('../activities/handleActivities');
         const {pokemonId}= req.params;
         const {user} = req;
         const {points} = req.body;
@@ -113,7 +114,7 @@ module.exports = {
                         shiny : sellingPokemon[0].shiny
                     });
 
-                    handleActivitie(sellingPokemon[0].image,`Selling a ${sellingPokemon[0].name}`,player);
+                    handleActivitie(sellingPokemon[0].image,`Sold a ${sellingPokemon[0].name}`,player);
 
                     newPokemon.save()
                     .then(pokemon => console.log(`Pokemon saved: ${pokemon.pokemonId}`))

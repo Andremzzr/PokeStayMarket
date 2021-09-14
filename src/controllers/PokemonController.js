@@ -32,10 +32,11 @@ module.exports = {
                         });
 
                         const buyerPoints = buyer.points;
-
+                        handleActivitie(pokemon.image, `Bought a ${pokemon.pokemonName}`, buyer);
                         Player.updateOne({playerId: req.user.playerId},{
                             pokemons : pokemonArray,
-                            points : buyerPoints - pokemon.pokemonPrice
+                            points : buyerPoints - pokemon.pokemonPrice,
+                            activities: buyer.activities
                         }, err => console.log(`You bought the ${pokemon.pokemonName} ${pokemon.pokemonId}`));
 
                         Player.findOne({playerId: pokemon.playerId})
@@ -60,6 +61,7 @@ module.exports = {
 
 
     sellPokemon: async (req,res) => {
+        const handleActivitie = require('../activities/handleActivities');
         const {pokemonId}= req.params;
         const {user} = req;
         const {points} = req.body;
@@ -111,12 +113,15 @@ module.exports = {
                         shiny : sellingPokemon[0].shiny
                     });
 
+                    handleActivitie(sellingPokemon[0].image,`Selling a ${sellingPokemon[0].name}`,player);
+
                     newPokemon.save()
                     .then(pokemon => console.log(`Pokemon saved: ${pokemon.pokemonId}`))
                     .catch(err => console.log(`Error: ${err}`));
 
                     Player.updateOne({playerId : user.playerId}, {
-                        pokemons : newPokemons
+                        pokemons : newPokemons,
+                        activities: player.activities
                      }, (err)=>{ res.redirect('/dashboard/profile')})
 
                 }

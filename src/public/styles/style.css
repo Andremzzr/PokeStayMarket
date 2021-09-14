@@ -475,8 +475,6 @@ main{
   border: none;
   background: none;
   cursor: pointer;
-
-  transition: 0.6s;
 }
 
 .message-alert button:hover{

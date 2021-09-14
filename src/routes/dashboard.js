@@ -38,7 +38,8 @@ router.get('/', isAuthorized , async (req,res) => {
         const pokemons = await Pokemon.find({});
         res.render('dashboard', {
              pokemons,
-             message : req.flash('message')
+             message : req.flash('message'),
+             success: req.flash('success')
         });
     }
     catch(err) {
@@ -50,7 +51,7 @@ router.get('/', isAuthorized , async (req,res) => {
 
 router.get('/profile/', isAuthorized , async (req,res) => {
     try{       
-        res.render('profile',{user : req.user});
+        res.render('profile',{user : req.user, message: req.flash('message')});
     }
     catch(err) {
         console.log(err);

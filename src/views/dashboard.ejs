@@ -1,15 +1,19 @@
 <%- include('partials/header') -%>
 <%- include('partials/navbar') -%>
 
-
-
 <main>
     <% if(message.length > 0) { %>
         <div class="message-alert" id="message-alert">
             <%= message %> 
         <button id="btn-close">x</button>    
         </div>
-        <% } %>
+    <% } %>
+    <% if(success.length > 0) { %>
+        <div class="message-success" id="message-alert">
+            <%= success %> 
+        <button id="btn-close">x</button>    
+        </div>
+    <% } %>
     <div class="title">
         Market
     </div>

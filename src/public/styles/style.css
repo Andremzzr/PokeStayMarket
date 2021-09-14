@@ -302,7 +302,7 @@ main{
   justify-content: center;
   display: flex;
   
-  width: 30%;
+  width: 60%;
   
   box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
 
@@ -330,7 +330,7 @@ main{
      -moz-appearance: none;
           appearance: none;
   background-color: transparent;
-  border: 2px solid #23ff6c;
+  border: 2px solid #ff5555;
  
   cursor: pointer;
   display: -webkit-box;
@@ -351,7 +351,7 @@ main{
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 
-  color: #23ff6c;
+  color: #ff5555;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -369,7 +369,7 @@ main{
           transform: translateX(-50%);
   width: 0;
   height: 100%;
-  background: #23ff6c;
+  background: #ff5555;
   z-index: -1;
   -webkit-transition: width 150ms ease-in-out;
   transition: width 150ms ease-in-out;
@@ -470,6 +470,17 @@ main{
   border-radius: 5px;
 }
 
+.message-success{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  margin-top: 10px;
+  background-color: #5cff71;
+  padding: 10px;
+  box-shadow: 0 3px 15px rgba(10, 10, 10, 0.5);
+
+  border-radius: 5px;
+}
+
 .message-alert button{
   font-size: 20px;
   border: none;
@@ -477,6 +488,16 @@ main{
   cursor: pointer;
 }
 
+.message-success button{
+  font-size: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.message-success button:hover{
+  color: white;
+}
 .message-alert button:hover{
   color: white;
 }
@@ -500,7 +521,7 @@ main{
   content: '';
   position: absolute;
   width: 6px;
-  background-color: rgb(255, 62, 62);
+  background-color: rgb(62, 255, 120);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -520,8 +541,8 @@ main{
   width: 25px;
   height: 25px;
   right: -17px;
-  background-color: red;
-  border: 4px solid red;
+  background-color: rgb(62, 255, 120);
+  border: 4px solid rgb(62, 255, 120);
   top: 15px;
   border-radius: 50%;
   z-index: 1;

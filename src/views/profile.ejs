@@ -2,6 +2,12 @@
 <%- include('partials/navbar') -%>
 
 <main>
+    <% if(message.length > 0) { %>
+        <div class="message-success" id="message-alert">
+            <%= message %> 
+        <button id="btn-close">x</button>    
+        </div>
+        <% } %>
     <div class="profile">
         <div class="profile-image">
             <img src="https://cdn.discordapp.com/avatars/<%= user.playerId %>/<%= user.icon %>.webp" alt="" class="profile-image">
@@ -113,7 +119,7 @@
 
 
 
-
+<script src="/scripts/close.js"></script>
 <script src="/scripts/type.js"></script>
 <script src="/scripts/colors.js"></script>
 <script src="/scripts/nav.js"></script>

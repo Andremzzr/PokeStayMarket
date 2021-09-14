@@ -36,7 +36,8 @@ const colors = {
 	normal: '#F5F5F5',
 	steel: '#DEDEDE',
 	ice: "#C7DEE5",
-	ghost: "#D2C5E6"
+	ghost: "#D2C5E6",
+	dark : "#9A90A9"
 }
 
 

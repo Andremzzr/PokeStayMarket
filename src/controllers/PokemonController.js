@@ -50,8 +50,8 @@ module.exports = {
                                     },err => console.log(`Player ${pokemon.playerId} receive ${ pokemon.pokemonPrice} pts!`) );   
 
                                     Pokemon.deleteOne({pokemonId : pokemonId},err => console.log("Pokemon sold"));
-
-                                    res.redirect('/dashboard/profile');
+                                    req.flash('success', `You bought the ${pokemon.pokemonName}`);
+                                    res.redirect('/dashboard/');
                                 }
                             )
                         }
@@ -123,7 +123,10 @@ module.exports = {
                     Player.updateOne({playerId : user.playerId}, {
                         pokemons : newPokemons,
                         activities: player.activities
-                     }, (err)=>{ res.redirect('/dashboard/profile')})
+                     }, (err)=>{ 
+                        req.flash('message', "Pokemon posted in the Market Successfully");
+                        res.redirect('/dashboard/profile')
+                    });
 
                 }
 

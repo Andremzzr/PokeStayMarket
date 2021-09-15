@@ -5,6 +5,7 @@ const Pokemon = require("../models/Pokemon");
 const {
     buyPokemon,
     sellPokemon,
+    findType,
 } = require('../controllers/PokemonController');
 
 const {
@@ -59,12 +60,7 @@ router.get('/profile/', isAuthorized , async (req,res) => {
     
 });
 
-router.post('/pokemons/', isAuthorized, async(req,res) => {
-    const {type} = req.body;
-    const pokemons = await Pokemon.find({});
-    const filteredPokemon = pokemons.filter(pokemon => pokemon.type.includes(type.toLowerCase()));
-    res.render('pokemons',{pokemons : filteredPokemon, type : type.toLowerCase()});
-});
+router.post('/pokemons/', isAuthorized, findType);
 
 
 router.get('/:profileId/page', isAuthorized, seeProfilePage);

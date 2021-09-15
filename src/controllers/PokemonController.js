@@ -134,5 +134,16 @@ module.exports = {
             }
 
         })
+    },
+
+    findType : async (req,res) => {
+        try {
+            const {type} = req.body;
+            const pokemons = await Pokemon.find({});
+            const filteredPokemon = pokemons.filter(pokemon => pokemon.type.includes(type.toLowerCase()));
+            res.render('pokemons',{pokemons : filteredPokemon, type : type.toLowerCase()});
+        } catch (error) {
+            console.log(err);   
+        }
     }
 }

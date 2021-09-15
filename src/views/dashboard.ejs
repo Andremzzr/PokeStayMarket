@@ -13,7 +13,11 @@
             <%= success %> 
         <button id="btn-close">x</button>    
         </div>
-    <% } %>
+    <% } %> 
+
+
+    <%- include('partials/typesearch') -%>
+    
     <div class="title">
         Market
     </div>
@@ -42,7 +46,8 @@
                   <%- pokemon.type %>
                 </div>
                 <div class="poke-price">
-                  Price: <%- pokemon.pokemonPrice %> points
+                    <i class="fab fa-bitcoin coin"></i>
+                    <%- pokemon.pokemonPrice %> points
                 </div>
                 
 

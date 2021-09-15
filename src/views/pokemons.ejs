@@ -1,0 +1,57 @@
+<%- include('partials/header') -%>
+<%- include('partials/navbar') -%>
+
+<main>
+   
+    <%- include('partials/typesearch') -%>
+    <div class="title">
+        Market
+    </div>
+    <div class="poke-container">
+        <% if (pokemons.length == 0) { %>
+            <div class="message">There are no pokemons with this type on the market</div>
+        <% } %>
+
+        
+
+        <% pokemons.forEach(pokemon =>{ %>
+            <% if (pokemon.type.includes(type)) { %>
+                <div class="pokemon">
+                
+                    <div>
+                        <%- pokemon.pokemonName %> 
+                    </div>
+                        
+                    <a href="https://www.pokemon.com/br/pokedex/<%=pokemon.pokemonName %>">
+                        <div class="poke-image">
+    
+                            <img src="<%=pokemon.image %>" alt="Pokemon Image:<%= pokemon.pokemonName %>" loading="lazy">
+                        </div>
+                    </a>
+                    <br>
+                    <h4><%- pokemon.pokemonId %></h4>
+                    <div class="poke-type">
+                      <%- pokemon.type %>
+                    </div>
+                    <div class="poke-price">
+                        <i class="fab fa-bitcoin coin"></i>
+                        <%- pokemon.pokemonPrice %> points
+                    </div>
+                    
+    
+                    <div class="button-cont" ><a class="btn-buy" href="/dashboard/buy/<%=pokemon.pokemonId%>" >Buy</a></div>
+    
+                </div>
+                <% } %>
+              <% }); %>
+            
+            
+    </div>
+   
+</main>
+ 
+
+<script src="/scripts/close.js"></script>
+<script src="/scripts/colors.js"></script>
+<%- include('partials/footer') -%>
+

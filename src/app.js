@@ -58,4 +58,4 @@ app.use((req,res,next) => {
     res.status(404).render('404');
 })
 
-app.listen(process.env.PORT, () => console.log(`Server online, on the port ${process.env.PORT}`));
+app.listen(process.env.PORT || 5000, () => console.log(`Server online, on the port ${process.env.PORT}`));

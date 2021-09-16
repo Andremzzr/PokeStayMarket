@@ -6,7 +6,7 @@ const passport = require('passport');
 router.get('/', passport.authenticate('discord'));
 router.get('/redirect', passport.authenticate('discord', {
     failureRedirect: '/forbiden',
-    successRedirect: '/dashboard'
+    successRedirect: 'https://pokestay.herokuapp.com/dashboard'
 }), async (req,res) => {
     if(req.user){
 

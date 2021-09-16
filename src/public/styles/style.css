@@ -7,7 +7,6 @@ body{
     padding: 0;
 }
 main{
-    
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -25,7 +24,7 @@ main{
     max-width: 1200px;
 }
 .type-form{
-  margin-top: 35px;
+  margin-top: 80px;
   max-width: 40%;
   justify-content: center;
 }
@@ -95,7 +94,17 @@ main{
   box-shadow: 0 3px 15px rgba(10, 10, 10, 0.5);
 }
 
+header nav{
+  z-index: 1000;
+  overflow: hidden;
+  position: fixed; 
+  top: -10; 
+  width: 100%; 
+}
 
+.sticky + .content {
+  padding-top: 60px;
+}
 
 .nav{
     color: #fff;
@@ -337,6 +346,7 @@ main{
   display: none;
 }
 .profile{
+  margin-top: 80px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -348,7 +358,6 @@ main{
 
   border-radius: 50px;
   padding: 10px;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -420,8 +429,12 @@ main{
 .btn-sell:hover:after {
   width: 110%;
 }
-
+.type-message{
+  margin-left: 8px;
+  margin-right: 8px;
+}
 .message{
+  display: flex;
   color: #777777;
   margin: 10px;
   font-size: 30px;
@@ -501,13 +514,13 @@ main{
 
 .message-alert{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: #ff5252;
   padding: 10px;
   box-shadow: 0 3px 15px rgba(10, 10, 10, 0.5);
-
+  opacity: 1;
   border-radius: 5px;
+
 }
 
 .message-success{
@@ -585,7 +598,7 @@ main{
   border: 4px solid rgb(62, 255, 120);
   top: 15px;
   border-radius: 50%;
-  z-index: 1;
+  z-index: -100;
 }
 
 

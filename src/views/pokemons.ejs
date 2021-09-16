@@ -9,7 +9,10 @@
     </div>
     <div class="poke-container">
         <% if (pokemons.length == 0) { %>
-            <div class="message">There are no pokemons with this type on the market</div>
+            <div class="message">There are no 
+                <div class="type-message">
+                <%= type %>
+            </div>  type pokemons on the market</div>
         <% } %>
 
         
@@ -50,7 +53,7 @@
    
 </main>
  
-
+<script src="/scripts/type.js"></script>
 <script src="/scripts/close.js"></script>
 <script src="/scripts/colors.js"></script>
 <%- include('partials/footer') -%>

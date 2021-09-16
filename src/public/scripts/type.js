@@ -1,6 +1,7 @@
 const types = document.getElementsByClassName('poke-type');
 const profile = document.querySelector('.profile');
 const profileType = document.querySelector('.profile-type');
+const messageType = document.querySelector('.message-type');
 
 
 function getMax(json){
@@ -103,4 +104,7 @@ for (let i = 0; i < types.length; i++) {
 }
 
 createImageTypeProfile(getMax(typeRank).trim(),profileType);    
+
 profile.style.backgroundColor = colorsForProfile[getMax(typeRank).trim()];
+console.log(messageType);
+if(messageType)messageType.style.color = colorsForProfile[messageType.textContent.trim()];

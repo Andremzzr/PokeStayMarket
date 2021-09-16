@@ -2,6 +2,7 @@
 <%- include('partials/navbar') -%>
 
 <main>
+    <%- include('partials/typesearch') -%>
     <% if(message.length > 0) { %>
         <div class="message-alert" id="message-alert">
             <%= message %> 
@@ -16,7 +17,7 @@
     <% } %> 
 
 
-    <%- include('partials/typesearch') -%>
+    
     
     <div class="title">
         Market
@@ -46,7 +47,6 @@
                   <%- pokemon.type %>
                 </div>
                 <div class="poke-price">
-                    <i class="fab fa-bitcoin coin"></i>
                     <%- pokemon.pokemonPrice %> points
                 </div>
                 

@@ -2,13 +2,14 @@
 <%- include('partials/navbar') -%>
 
 <main>
+    <div class="make-space"></div>
     <% if(message.length > 0) { %>
-        <div class="message-alert" id="message-alert">
+        <div class="message-alert sell-pokemon-message" id="message-alert">
             <%= message %> 
         <button id="btn-close">x</button>    
         </div>
         <% } %>
-    <div class="poke-container">
+    <div class="poke-container sell-pokemon-container">
         <% user.pokemons.forEach(pokemon => { %>
             
            <% if (pokemon.pokemonId == pokemonId) {%>

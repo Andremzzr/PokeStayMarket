@@ -523,6 +523,14 @@ header nav{
 
 }
 
+.make-space{
+  margin-bottom:80px;
+}
+.sell-pokemon-message{
+  margin-top: 0px;  
+}
+
+
 .message-success{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
